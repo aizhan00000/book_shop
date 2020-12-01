@@ -38,12 +38,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'rest_auth',
     'rest_framework',
     'book_shop',
     'orders',
-    'category',
+    'user',
+
+
 ]
 
+SITE_ID = 1
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        ],
+}
 
 
 MIDDLEWARE = [
@@ -77,7 +87,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'main.wsgi.application'
-AUTH_USER_MODEL = 'auth.User'
+AUTH_USER_MODEL = 'user.User'
+
 
 
 
